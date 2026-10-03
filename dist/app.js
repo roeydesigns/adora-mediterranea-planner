@@ -33,6 +33,19 @@ function currencyParts(dollars,hongKong,pesos){return `<span>${usd(dollars)}</sp
 function rowText(label,detail,value){return `<div class="calc-row total"><span>${label}<small>${detail}</small></span><b class="currency-parts">${value}</b></div>`;}
 function row(label,detail,valueUSD,total=false,highlight=''){return `<div class="calc-row${total?' total':''}${highlight?' '+highlight:''}"><span>${label}${detail?`<small>${detail}</small>`:''}</span><b>${money(valueUSD)}</b></div>`;}
 
+function renderFullView(){
+ $('full-booking-name').textContent=selected.name;
+ $('full-booking-meta').textContent=$('selected-meta').textContent;
+ $('full-convert-php').checked=$('convert-php').checked;
+ for(const id of ['full-fares','full-exclusions','full-payments'])$(id).replaceChildren();
+ let afterExclusions=false;
+ for(const child of $('calculation').children){
+  if(child.classList.contains('exclusions')){afterExclusions=true;$('full-exclusions').append(child.cloneNode(true));}
+  else if(child.classList.contains('promo-saving'))$('full-exclusions').append(child.cloneNode(true));
+  else if(afterExclusions||child.classList.contains('cabin-total')||child.classList.contains('per-pax-rate'))$('full-payments').append(child.cloneNode(true));
+  else $('full-fares').append(child.cloneNode(true));
+ }
+}
 function renderCalculation(){
  const c=compute(selected,quantity),s=sailings[$('sailing').value],converted=$('convert-php').checked;
  $('selected-name').textContent=selected.name;
@@ -46,6 +59,7 @@ function renderCalculation(){
  }).join('');
  const saving=selected.components?`<div class="promo-saving"><b>${c.cabins} cabins for ${c.pax} pax${c.savingsUSD>0?` · Save ${money(c.savingsUSD)}`:''}</b><small>${selected.components.map(p=>p.name).join(' + ')}${c.savingsUSD>0?'<br>Savings compared with original Twin Interior rates and each cabin’s Pax 1 fare for all its guests.':''}</small></div>`:balconyPromo?`<div class="promo-saving balcony-promo"><b>Balcony Twin · 3+1 promo</b><small>${c.pax} pax · ${c.cabins} Twin Balcony cabins · 2 guests per cabin</small><p>${3*quantity} regular fares × ${money(selected.fares[0])} + <strong>${quantity===1?'4th pax FREE':`${quantity} free fares`}</strong><br>Cruise fare total: <strong>${money(c.fareUSD)}</strong></p><b>Save ${money(c.savingsUSD)} in cruise fares</b><small>Port charges and exclusions apply to all ${c.pax} pax.</small></div>`:selected.originalFares?`<div class="promo-saving"><b>Twin Interior promo · ${money(selected.discountPerPaxUSD)} off per pax</b><small>Original <del>${money(selected.originalFares[0])}</del> → ${money(selected.fares[0])} per pax<br>Total fare savings: ${money(c.savingsUSD)} for ${c.pax} pax.</small></div>`:c.savingsUSD>0?`<div class="promo-saving"><b>${selected.promo?(selected.cabins===2?'3+1 promo':'4th guest sails free'):'Reduced guest fare'} · Save ${money(c.savingsUSD)}</b><small>Compared with ${c.pax} guests at Pax 1’s ${money(selected.fares[0])} fare.</small></div>`:'';
  $('calculation').innerHTML=`${saving}<h4 class="breakdown-label">Cruise fare per guest</h4>${fares}${row('Total cruise fare','',c.fareUSD,true)}${row('Port charges',`${money(150)} per pax × ${c.pax}`,c.portUSD)}${row(c.cabins===1?'Total price for the cabin':'Total price for the cabins','Cruise fare + port charges',c.packageUSD,true,'cabin-total')}<div class="per-pax-rate"><span>Rate per pax</span><strong>${money(c.packageUSD/c.pax)}</strong></div><section class="exclusions"><h4>Exclusions and payments${selected.components?'':' per pax'}</h4><ul><li><span>PH travel tax<small>PHP 1,620 per pax · Pay online on your own or onboard</small></span><b>${nativeFee(1620,'PHP')}</b></li><li><span>Japan tourist arrival fee<small>USD 20 per pax · Pay onboard</small></span><b>${money(20)}</b></li><li><span>Cruise gratuities${selected.components?' · Group total':''}<small>${selected.components?gratuityDetail(selected):hkd(selected.tipHKD)} · Pay onboard</small></span><b>${nativeFee(selected.components?c.tipHKD:selected.tipHKD,'HKD')}</b></li><li><span>Travel insurance</span><em>Not priced</em></li><li><span>Optional tour / shore excursion</span><em>Not priced</em></li></ul>${converted?row('Total of exclusions',`${c.pax} pax · Priced items only`,c.exclusionsUSD,true):rowText('Total of exclusions',`${c.pax} pax · Priced items only`,currencyParts(c.arrivalUSD,c.tipHKD,c.taxPHP))}</section><div class="trip-total"><span>Overall total cost<small>Cabin price + priced exclusions · ${c.pax} pax</small></span><strong class="${converted?'':'currency-parts'}">${converted?php(c.overallPHP):currencyParts(c.packageUSD+c.arrivalUSD,c.tipHKD,c.taxPHP)}</strong></div><div class="down-payment"><span class="payment-label">Total down payment · ${c.pax} pax</span><strong>${money(c.downUSD)}</strong><p>USD 300 × ${c.pax} pax = <b>${usd(c.downUSD)}</b>${converted?`<br>${usd(c.downUSD)} × ₱63 = <b>${php(c.downPHP)}</b>`:''}</p><small>Included in the cabin price.</small></div>${row('Remaining cabin balance','After down payment; excludes separate payments',c.packageUSD-c.downUSD)}<p class="currency-note">${converted?'USD × 63 · HKD × 8':'Original currencies shown. Check Convert to PHP for one combined total.'} Insurance and excursions are not included.</p>`;
+ if($('full-breakdown').open)renderFullView();
 }
 function renderGuide(){
  const key=$('sailing').value;
@@ -73,6 +87,9 @@ function render(){
  renderGuide();
 }
 document.addEventListener('click',e=>{const link=e.target.closest('[data-image-open]');if(!link)return;e.preventDefault();$('source-image').src=link.href;$('source-title').textContent=link.textContent.replace(' ↗','');$('image-viewer').showModal();});
+$('open-breakdown').addEventListener('click',()=>{if($('calculation').hidden)return;renderFullView();$('full-breakdown').showModal();});
+$('close-breakdown').addEventListener('click',()=>{$('full-breakdown').close();});
+$('full-convert-php').addEventListener('change',()=>{$('convert-php').checked=$('full-convert-php').checked;renderCalculation();});
 $('close-image').addEventListener('click',()=>{$('image-viewer').close();});
 $('more-options').addEventListener('click',()=>{visibleOffers+=12;render();});
 $('convert-php').addEventListener('change',renderCalculation);
