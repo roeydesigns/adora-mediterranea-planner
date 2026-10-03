@@ -1,0 +1,490 @@
+[
+  {
+    "id": 0,
+    "name": "Twin Interior Cabin",
+    "fares": [
+      899,
+      899
+    ],
+    "pax": 2,
+    "cabins": 1,
+    "packageUSD": 2098,
+    "tipHKD": 840,
+    "season": "holiday",
+    "page": 1,
+    "suite": false,
+    "promo": false,
+    "discountPerPaxUSD": 89,
+    "originalFares": [
+      988,
+      988
+    ],
+    "promoType": "twin-interior-discount"
+  },
+  {
+    "id": 1,
+    "name": "Quad Interior Cabin",
+    "fares": [
+      988,
+      988,
+      399,
+      0
+    ],
+    "pax": 4,
+    "cabins": 1,
+    "packageUSD": 2975,
+    "tipHKD": 840,
+    "season": "holiday",
+    "page": 1,
+    "suite": false,
+    "promo": true
+  },
+  {
+    "id": 2,
+    "name": "Twin Oceanview Cabin",
+    "fares": [
+      1088,
+      1088
+    ],
+    "pax": 2,
+    "cabins": 1,
+    "packageUSD": 2476,
+    "tipHKD": 840,
+    "season": "holiday",
+    "page": 2,
+    "suite": false,
+    "promo": false
+  },
+  {
+    "id": 3,
+    "name": "Triple Oceanview Cabin",
+    "fares": [
+      1088,
+      1088,
+      549
+    ],
+    "pax": 3,
+    "cabins": 1,
+    "packageUSD": 3175,
+    "tipHKD": 840,
+    "season": "holiday",
+    "page": 2,
+    "suite": false,
+    "promo": false
+  },
+  {
+    "id": 4,
+    "name": "Quad Oceanview Cabin",
+    "fares": [
+      1088,
+      1088,
+      549,
+      0
+    ],
+    "pax": 4,
+    "cabins": 1,
+    "packageUSD": 3325,
+    "tipHKD": 840,
+    "season": "holiday",
+    "page": 3,
+    "suite": false,
+    "promo": true
+  },
+  {
+    "id": 5,
+    "name": "Twin Balcony Cabin",
+    "fares": [
+      1288,
+      1288
+    ],
+    "pax": 2,
+    "cabins": 1,
+    "packageUSD": 2876,
+    "tipHKD": 840,
+    "season": "holiday",
+    "page": 3,
+    "suite": false,
+    "promo": false
+  },
+  {
+    "id": 6,
+    "name": "Two Twin Balcony Cabins",
+    "fares": [
+      1288,
+      1288,
+      1288,
+      0
+    ],
+    "pax": 4,
+    "cabins": 2,
+    "packageUSD": 4464,
+    "tipHKD": 840,
+    "season": "holiday",
+    "page": 4,
+    "suite": false,
+    "promo": true
+  },
+  {
+    "id": 7,
+    "name": "Triple Balcony Cabin",
+    "fares": [
+      1288,
+      1288,
+      649
+    ],
+    "pax": 3,
+    "cabins": 1,
+    "packageUSD": 3675,
+    "tipHKD": 840,
+    "season": "holiday",
+    "page": 4,
+    "suite": false,
+    "promo": false
+  },
+  {
+    "id": 8,
+    "name": "Quad Balcony Cabin",
+    "fares": [
+      1288,
+      1288,
+      649,
+      0
+    ],
+    "pax": 4,
+    "cabins": 1,
+    "packageUSD": 3825,
+    "tipHKD": 840,
+    "season": "holiday",
+    "page": 5,
+    "suite": false,
+    "promo": true
+  },
+  {
+    "id": 9,
+    "name": "Twin Balcony Suite",
+    "fares": [
+      1588,
+      1588
+    ],
+    "pax": 2,
+    "cabins": 1,
+    "packageUSD": 3476,
+    "tipHKD": 960,
+    "season": "holiday",
+    "page": 5,
+    "suite": true,
+    "promo": false
+  },
+  {
+    "id": 10,
+    "name": "Triple Balcony Suite",
+    "fares": [
+      1588,
+      1588,
+      799
+    ],
+    "pax": 3,
+    "cabins": 1,
+    "packageUSD": 4425,
+    "tipHKD": 960,
+    "season": "holiday",
+    "page": 6,
+    "suite": true,
+    "promo": false
+  },
+  {
+    "id": 11,
+    "name": "Quad Balcony Suite",
+    "fares": [
+      1588,
+      1588,
+      799,
+      0
+    ],
+    "pax": 4,
+    "cabins": 1,
+    "packageUSD": 4575,
+    "tipHKD": 960,
+    "season": "holiday",
+    "page": 6,
+    "suite": true,
+    "promo": true
+  },
+  {
+    "id": 12,
+    "name": "Twin Grand Balcony Suite",
+    "fares": [
+      1888,
+      1888
+    ],
+    "pax": 2,
+    "cabins": 1,
+    "packageUSD": 4076,
+    "tipHKD": 960,
+    "season": "holiday",
+    "page": 7,
+    "suite": true,
+    "promo": false
+  },
+  {
+    "id": 13,
+    "name": "Triple Grand Balcony Suite",
+    "fares": [
+      1888,
+      1888,
+      949
+    ],
+    "pax": 3,
+    "cabins": 1,
+    "packageUSD": 5175,
+    "tipHKD": 960,
+    "season": "holiday",
+    "page": 7,
+    "suite": true,
+    "promo": false
+  },
+  {
+    "id": 14,
+    "name": "Twin Interior Cabin",
+    "fares": [
+      699,
+      699
+    ],
+    "pax": 2,
+    "cabins": 1,
+    "packageUSD": 1698,
+    "tipHKD": 560,
+    "season": "january",
+    "page": 8,
+    "suite": false,
+    "promo": false,
+    "discountPerPaxUSD": 89,
+    "originalFares": [
+      788,
+      788
+    ],
+    "promoType": "twin-interior-discount"
+  },
+  {
+    "id": 15,
+    "name": "Quad Interior Cabin",
+    "fares": [
+      788,
+      788,
+      319,
+      0
+    ],
+    "pax": 4,
+    "cabins": 1,
+    "packageUSD": 2495,
+    "tipHKD": 560,
+    "season": "january",
+    "page": 8,
+    "suite": false,
+    "promo": true
+  },
+  {
+    "id": 16,
+    "name": "Twin Oceanview Cabin",
+    "fares": [
+      888,
+      888
+    ],
+    "pax": 2,
+    "cabins": 1,
+    "packageUSD": 2076,
+    "tipHKD": 560,
+    "season": "january",
+    "page": 9,
+    "suite": false,
+    "promo": false
+  },
+  {
+    "id": 17,
+    "name": "Triple Oceanview Cabin",
+    "fares": [
+      888,
+      888,
+      449
+    ],
+    "pax": 3,
+    "cabins": 1,
+    "packageUSD": 2675,
+    "tipHKD": 560,
+    "season": "january",
+    "page": 9,
+    "suite": false,
+    "promo": false
+  },
+  {
+    "id": 18,
+    "name": "Quad Oceanview Cabin",
+    "fares": [
+      888,
+      888,
+      449,
+      0
+    ],
+    "pax": 4,
+    "cabins": 1,
+    "packageUSD": 2825,
+    "tipHKD": 560,
+    "season": "january",
+    "page": 10,
+    "suite": false,
+    "promo": true
+  },
+  {
+    "id": 19,
+    "name": "Twin Balcony Cabin",
+    "fares": [
+      1088,
+      1088
+    ],
+    "pax": 2,
+    "cabins": 1,
+    "packageUSD": 2476,
+    "tipHKD": 560,
+    "season": "january",
+    "page": 10,
+    "suite": false,
+    "promo": false
+  },
+  {
+    "id": 20,
+    "name": "Two Twin Balcony Cabins",
+    "fares": [
+      1088,
+      1088,
+      1088,
+      0
+    ],
+    "pax": 4,
+    "cabins": 2,
+    "packageUSD": 3864,
+    "tipHKD": 560,
+    "season": "january",
+    "page": 11,
+    "suite": false,
+    "promo": true
+  },
+  {
+    "id": 21,
+    "name": "Triple Balcony Cabin",
+    "fares": [
+      1088,
+      1088,
+      549
+    ],
+    "pax": 3,
+    "cabins": 1,
+    "packageUSD": 3175,
+    "tipHKD": 560,
+    "season": "january",
+    "page": 11,
+    "suite": false,
+    "promo": false
+  },
+  {
+    "id": 22,
+    "name": "Quad Balcony Cabin",
+    "fares": [
+      1088,
+      1088,
+      549,
+      0
+    ],
+    "pax": 4,
+    "cabins": 1,
+    "packageUSD": 3325,
+    "tipHKD": 560,
+    "season": "january",
+    "page": 12,
+    "suite": false,
+    "promo": true
+  },
+  {
+    "id": 23,
+    "name": "Twin Balcony Suite",
+    "fares": [
+      1388,
+      1388
+    ],
+    "pax": 2,
+    "cabins": 1,
+    "packageUSD": 3076,
+    "tipHKD": 640,
+    "season": "january",
+    "page": 12,
+    "suite": true,
+    "promo": false
+  },
+  {
+    "id": 24,
+    "name": "Triple Balcony Suite",
+    "fares": [
+      1388,
+      1388,
+      699
+    ],
+    "pax": 3,
+    "cabins": 1,
+    "packageUSD": 3925,
+    "tipHKD": 640,
+    "season": "january",
+    "page": 13,
+    "suite": true,
+    "promo": false
+  },
+  {
+    "id": 25,
+    "name": "Quad Balcony Suite",
+    "fares": [
+      1388,
+      1388,
+      699,
+      0
+    ],
+    "pax": 4,
+    "cabins": 1,
+    "packageUSD": 4075,
+    "tipHKD": 640,
+    "season": "january",
+    "page": 13,
+    "suite": true,
+    "promo": true
+  },
+  {
+    "id": 26,
+    "name": "Twin Grand Balcony Suite",
+    "fares": [
+      1688,
+      1688
+    ],
+    "pax": 2,
+    "cabins": 1,
+    "packageUSD": 3676,
+    "tipHKD": 640,
+    "season": "january",
+    "page": 14,
+    "suite": true,
+    "promo": false
+  },
+  {
+    "id": 27,
+    "name": "Triple Grand Balcony Suite",
+    "fares": [
+      1688,
+      1688,
+      849
+    ],
+    "pax": 3,
+    "cabins": 1,
+    "packageUSD": 4675,
+    "tipHKD": 640,
+    "season": "january",
+    "page": 14,
+    "suite": true,
+    "promo": false
+  }
+]
